@@ -18,6 +18,7 @@ body{
 table{
 width: 500px;
 border-collapse: collapse;
+position: relative;
 
 }
 
@@ -31,9 +32,28 @@ thead{
     background-color: gray;
     color: white;
 }
+thead > tr >th{
+    position: sticky;
+    top: -1px;
+    background-color: gray;
+}
+caption{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+    background-color: lightgray;
+}
 tfoot{
     background-color: gray;
     color: white;
+}
+tbody > tr:nth-child(2n){
+    background-color: lightgrey;
+
+
+}
+td.num{
+    text-align: right;
 }
     </style>
 </head>
@@ -54,24 +74,25 @@ tfoot{
 -->
     
 <Table>
+    <caption>População das Unidades Federaivas</caption>
     <thead>
-        <th>Estado</th>
-        <th>População</th>
+        <th scope="col">Estado</th>
+        <th scope="col">População</th>
     </thead>
 
     <tbody>
         <tr>
             <td>São Paulo</td>
-            <td> 45 919 049</td>
+            <td class="num"> 45 919 049</td>
         </tr>
 
         <tr>
             <td>Minas Gerais</td>
-            <td>21 245 633</td>
+            <td class="num">21 245 633</td>
         </tr>
         <tr>
             <td>Rio de Janero</td>
-            <td>16 455 876</td>
+            <td class="num">16 455 876</td>
         </tr>
 
 
@@ -79,7 +100,7 @@ tfoot{
 
     <tfoot>
 
-<th>Total de Habitates</th>
+<th scope="row">Total de Habitates</th>
 <td><strong>210.147.123</strong></td>
     </tfoot>
 
